@@ -1,39 +1,42 @@
 #!/usr/bin/python3
-"""Defines a class Square."""
+'''
+    A function that prints a text with 2 new lines;
+        after each of these characters:
+            ".", "?" and ":"
+'''
 
 
-class Square:
-    """Represents a square."""
-
-    def __init__(self, size):
-        """Initializes a new square.
-
+def text_indentation(text):
+    '''
         Args:
-            size (int): The size of the new square.
-        """
-        self.size = size
-
-    @property
-    def size(self):
-        """Gets/sets the current size of the square."""
-        return (self.__size)
-
-    @size.setter
-    def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    def area(self):
-        """Returns the current area of the square."""
-        return (self.__size * self.__size)
-
-    def my_print(self):
-        """Prints the square with the # character."""
-        for i in range(0, self.__size):
-            [print("#", end="") for j in range(self.__size)]
-            print("")
-        if self.__size == 0:
-            print("")
+            text: The text to print(string).
+        Raises:
+            TypeError: If the text is not a string.
+    '''
+    if not isinstance(text, str):
+        raise TypeError('text must be a string')
+    else:
+        res = []
+        a = 0
+        text_lenght= len(text)
+        space_skip = True
+        is_end = False
+        is_delim = False
+        for i in range(text_lenght):
+            is_end = i == text_lenght - 1
+            is_delim = text[i] in '.?:'
+            if is_delim or is_end:
+                res.append(text[a: i + 1] + ('\n\n' * is_delim))
+                space_skip = True
+                a = i + 1
+            elif text[i] in ' \t\r\v' and space_skip:
+                a += 1
+            elif text[i] == '\n':
+                res.append(text[a: i + 1].rstrip() + '\n')
+                a += 1
+                space_skip = True
+            else:
+                if space_skip:
+                    a = i
+                space_skip = False
+        print(''.join(res), end='')
