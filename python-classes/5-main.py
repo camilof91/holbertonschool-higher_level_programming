@@ -1,17 +1,75 @@
 #!/usr/bin/python3
-Square = __import__('5-square').Square
+'''
+    A class Square that defines a square by:
+    (based on 4-square.py)
+'''
 
-my_square = Square(3)
-my_square.my_print()
 
-print("--")
+class Square:
+    def __init__(self, size=0):
 
-my_square.size = 10
-my_square.my_print()
+        '''
+            Initializing this square class
 
-print("--")
+            Args:
+                size: represnets the size of the square defined
+        '''
 
-my_square.size = 0
-my_square.my_print()
+        if not isinstance(size, int):
+            '''
+                Raises:
+                    TypeError: if size is not int
+            '''
+            raise TypeError('size must be an integer')
 
-print("--")
+        if size < 0:
+            '''
+                Raises:
+                    ValueError: if size < 0
+            '''
+            raise ValueError('size must be >= 0')
+
+        self.__size = size
+
+    @property
+    def size(self):
+        '''
+            Retrieves size of square
+        '''
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
+            '''
+                Raises:
+                    TypeError: if size is not int
+            '''
+            raise TypeError('size must be an integer')
+        if value < 0:
+            '''
+                Raises:
+                    ValueError: if size < 0
+            '''
+            raise ValueError('size must be >= 0')
+        self.__size = value
+
+    def area(self):
+        '''
+            Calculate area of the square
+            Returns: The square of the size
+        '''
+        Area = self.__size * self.__size
+
+        return Area
+
+    def my_print(self):
+        '''
+            print the square in #
+        '''
+
+        if self.__size == 0:
+            print()
+
+        for i in range(self.__size):
+            print("#" * self.__size)
