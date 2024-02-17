@@ -1,29 +1,39 @@
 #!/usr/bin/python3
-"""Defines a text-indentation function."""
+"""Defines a class Square."""
 
 
-def text_indentation(text):
-    """Print text with two new lines after each '.', '?', and ':'.
+class Square:
+    """Represents a square."""
 
-    Args:
-        text (string): The text to print.
-    Raises:
-        TypeError: If text is not a string.
-    """
-    if not isinstance(text, str):
-        raise TypeError("text must be a string")
+    def __init__(self, size):
+        """Initializes a new square.
 
-    c = 0
-    while c < len(text) and text[c] == ' ':
-        c += 1
+        Args:
+            size (int): The size of the new square.
+        """
+        self.size = size
 
-    while c < len(text):
-        print(text[c], end="")
-        if text[c] == "\n" or text[c] in ".?:":
-            if text[c] in ".?:":
-                print("\n")
-            c += 1
-            while c < len(text) and text[c] == ' ':
-                c += 1
-            continue
-        c += 1
+    @property
+    def size(self):
+        """Gets/sets the current size of the square."""
+        return (self.__size)
+
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    def area(self):
+        """Returns the current area of the square."""
+        return (self.__size * self.__size)
+
+    def my_print(self):
+        """Prints the square with the # character."""
+        for i in range(0, self.__size):
+            [print("#", end="") for j in range(self.__size)]
+            print("")
+        if self.__size == 0:
+            print("")
