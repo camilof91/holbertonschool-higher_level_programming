@@ -18,8 +18,8 @@ def text_indentation(text):
     line = ""
     for char in text:
         line += char
-        if char in ".?:":
-            res.append(line.strip())
+        if char in ".?:":  
+            res.append(line.strip())  
             res.append("\n\n")
             line = ""
     res.append(line.strip())
