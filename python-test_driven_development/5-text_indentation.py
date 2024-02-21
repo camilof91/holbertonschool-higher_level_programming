@@ -21,7 +21,7 @@ def text_indentation(text):
             continue
         textIndent += char
         if char in listSearch:
-            textIndent += "\n" * 2
+            textIndent += "\n\n"  # Insert two new lines after the special characters
         prev_char = char
 
     print(textIndent, end="")
