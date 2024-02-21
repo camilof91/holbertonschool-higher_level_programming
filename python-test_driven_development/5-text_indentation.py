@@ -5,6 +5,7 @@
             ".", "?" and ":"
 '''
 
+
 def text_indentation(text):
     """Print a square with the # character.
 
@@ -14,7 +15,7 @@ def text_indentation(text):
         TypeError: If size is not an integer.
         ValueError: If size is < 0
     """
-     if not isinstance(text, str):
+    if not isinstance(text, str):
         raise TypeError('text must be a string')
 
     res = []
