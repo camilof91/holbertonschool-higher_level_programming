@@ -8,10 +8,10 @@
 
 def text_indentation(text):
     '''
-        Args:
-            text: The text to print(string).
-        Raises:
-            TypeError: If the text is not a string.
+    Args:
+    text: The text to print(string).
+    Raises:
+    TypeError: If the text is not a string.
     '''
     if not isinstance(text, str):
         raise TypeError('text must be a string')
