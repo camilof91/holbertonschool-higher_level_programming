@@ -18,7 +18,7 @@ def text_indentation(text):
     else:
         res = []
         a = 0
-        text_lenght= len(text)
+        text_lenght = len(text)
         space_skip = True
         is_end = False
         is_delim = False
