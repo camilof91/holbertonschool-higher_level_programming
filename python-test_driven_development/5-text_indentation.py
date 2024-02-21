@@ -7,6 +7,14 @@
 
 
 def text_indentation(text):
+    """Print a square with the # character.
+
+    Args:
+        text (str): The height/width of the square.
+    Raises:
+        TypeError: If size is not an integer.
+        ValueError: If size is < 0
+    """
     if not isinstance(text, str):
         raise TypeError('text must be a string')
     
@@ -15,7 +23,7 @@ def text_indentation(text):
     for char in text:
         line += char
         if char in ".?:":
-            # Check if the next character is a space
+            # Check if the next character is a space:
             if len(text) > 1 and text[text.index(char) + 1].isspace():
                 res.append(line.strip())
                 res.append("\n\n")
