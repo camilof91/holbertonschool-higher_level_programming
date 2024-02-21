@@ -13,11 +13,5 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    
-    # Eliminar espacios adicionales al final del último nombre
-    last_name = last_name.strip()
-    
-    print("My name is {} {}".format(first_name, last_name))
 
-    # Agregar un salto de línea al final
-    print("")
+    print("My name is {} {}\n".format(first_name, last_name))
