@@ -12,15 +12,12 @@ def text_indentation(text):
     after each of these characters: ., ? and :
     """
     if not isinstance(text, str):
-        raise TypeError('text must be a string')
-
-    res = []
-    line = ""
-    for char in text:
-        line += char
-        if char in ".?:":
-            res.append(line.strip())
-            res.append("\n\n")
-            line = ""
-    res.append(line.strip())
-    print("".join(res), end='')
+        raise TypeError("text must be a string")
+    for i, char in enumerate(text):
+        if char == '.' or char == '?' or char == ':':
+            print(char)
+            print()
+        elif char == ' ' and text[i-1] in (".", "?", ":"):
+            pass
+        else:
+            print(char, end="")
