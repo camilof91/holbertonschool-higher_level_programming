@@ -42,4 +42,4 @@ def text_indentation(text):
                 if space_skip:
                     a = i
                 space_skip = False
-        print(''.join(res), end = '')
+        print(''.join(res), end='')
