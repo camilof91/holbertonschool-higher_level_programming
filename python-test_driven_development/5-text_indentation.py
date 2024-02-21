@@ -16,8 +16,8 @@ def text_indentation(text):
     for char in text:
         line += char
         if char in ".?:":  # Check if the character is a delimiter
-            res.append(line.rstrip())  # Add the current line without trailing whitespace
+            res.append(line.strip())  # Add the current line without extra trailing whitespace
             res.append("\n\n")  # Add two new lines after the delimiter
             line = ""  # Reset the line for the next iteration
-    res.append(line.rstrip())  # Add the last line without trailing whitespace
+    res.append(line.strip())  # Add the last line without extra trailing whitespace
     print("".join(res), end='')
