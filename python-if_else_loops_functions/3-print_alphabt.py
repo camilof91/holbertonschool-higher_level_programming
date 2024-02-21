@@ -2,3 +2,7 @@
 for c in range(ord('a'), ord('z') + 1):
     if c != ord('e') and c != ord('q'):
         print("{:c}".format(c), end="")
+'''
+{:c} indica format(c) el tipo de formato
+en este caso es un unicode
+'''

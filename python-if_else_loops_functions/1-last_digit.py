@@ -6,10 +6,7 @@ new_num = number
 if number < 0:
     new_num *= (-1)
 
-last_digit = (new_num % 10)
-
-if number < 0:
-    last_digit *= (-1)
+last_digit = (abs(new_num) % 10)
 
 print(f'Last digit of {number:d} is {last_digit}', end=' ')
 
