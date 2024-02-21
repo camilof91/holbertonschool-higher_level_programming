@@ -27,5 +27,6 @@ def text_indentation(text):
     if line or not lines:
         lines.append(line.strip())
 
-    for line in lines:
-        print(line)
+    for i, line in enumerate(lines):
+        if i % 2 == 0:
+            print(line)
