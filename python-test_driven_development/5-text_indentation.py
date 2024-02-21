@@ -20,13 +20,9 @@ def text_indentation(text):
     for char in text:
         line += char
         if char in punctuations:
-            lines.append(line.strip())
-            lines.append('')
+            lines.append(line.strip() + '\n\n')
             line = ''
-
-    if line or not lines:
+    if line.strip():
         lines.append(line.strip())
 
-    for i, line in enumerate(lines):
-        if i % 2 == 0:
-            print(line)
+    print('\n'.join(lines))
