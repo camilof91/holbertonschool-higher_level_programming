@@ -33,4 +33,4 @@ def text_indentation(text):
         elif char == ' ' and not newline:
             result += char
 
-    print(result, end='')
+    return result
