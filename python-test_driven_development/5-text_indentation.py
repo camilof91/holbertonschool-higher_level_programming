@@ -8,24 +8,20 @@
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines
-    after each of these characters: ., ? and :
+    Prints a text with 2 new lines after each of these characters: ., ? and :
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
     listSearch = [".", "?", ":"]
     textIndent = ""
-    copy = ''
-    for chars in text:
-        if chars not in listSearch:
-            if copy == " " and chars == " ":
-                continue
-            if copy not in listSearch or chars != " ":
-                textIndent += chars
-            copy = chars
+    prev_char = ''
+    for char in text:
+        if char == " " and prev_char == " ":
             continue
-        copy = chars
-        textIndent += chars
-        textIndent += "\n" * 2
+        textIndent += char
+        if char in listSearch:
+            textIndent += "\n" * 2
+        prev_char = char
+
     print(textIndent, end="")
