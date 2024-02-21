@@ -21,12 +21,12 @@ def text_indentation(text):
     else:
         res = []
         a = 0
-        text_lenght = len(text)
+        text_length = len(text)
         space_skip = True
         is_end = False
         is_delim = False
-        for i in range(text_lenght):
-            is_end = i == text_lenght - 1
+        for i in range(text_length):
+            is_end = i == text_length - 1
             is_delim = text[i] in '.?:'
             if is_delim or is_end:
                 res.append(text[a: i + 1] + ('\n\n' * is_delim))
@@ -42,4 +42,4 @@ def text_indentation(text):
                 if space_skip:
                     a = i
                 space_skip = False
-        print(''.join(res), end='')
+        return ''.join(res)
