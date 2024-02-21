@@ -43,3 +43,4 @@ def text_indentation(text):
                     a = i
                 space_skip = False
         return ''.join(res)
+
