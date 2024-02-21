@@ -18,3 +18,6 @@ def say_my_name(first_name, last_name=""):
     last_name = last_name.strip()
     
     print("My name is {} {}".format(first_name, last_name))
+
+    # Agregar un salto de línea al final
+    print("")
