@@ -8,6 +8,8 @@
 
 def text_indentation(text):
     '''
+        Prints the given text with two new
+        lines after each occurrence of '.', '?', or ':'.
         Args:
             text: The text to print(string).
         Raises:
@@ -19,7 +21,7 @@ def text_indentation(text):
     else:
         res = []
         a = 0
-        text_lenght= len(text)
+        text_lenght = len(text)
         space_skip = True
         is_end = False
         is_delim = False
@@ -40,4 +42,4 @@ def text_indentation(text):
                 if space_skip:
                     a = i
                 space_skip = False
-        print(''.join(res), end='')
+        print(''.join(res), end = '')
