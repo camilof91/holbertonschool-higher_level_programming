@@ -5,7 +5,6 @@
             ".", "?" and ":"
 '''
 
-
 def text_indentation(text):
     """Print a square with the # character.
 
