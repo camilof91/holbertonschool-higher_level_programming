@@ -13,11 +13,19 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    for i, char in enumerate(text):
-        if char == '.' or char == '?' or char == ':':
-            print(char)
-            print()
-        elif char == ' ' and text[i-1] in (".", "?", ":"):
-            pass
-        else:
-            print(char, end="")
+
+    listSearch = [".", "?", ":"]
+    textIndent = ""
+    copy = ''
+    for chars in text:
+        if chars not in listSearch:
+            if copy == " " and chars == " ":
+                continue
+            if copy not in listSearch or chars != " ":
+                textIndent += chars
+            copy = chars
+            continue
+        copy = chars
+        textIndent += chars
+        textIndent += "\n" * 2
+    print(textIndent, end="")
