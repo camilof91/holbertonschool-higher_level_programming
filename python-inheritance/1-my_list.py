@@ -13,5 +13,5 @@ class MyList(list):
         Print a list in
         sorted ascending order.
         """
-        sorted_list = sorted(self)
-        print(sorted(self))
+        sorted_list = sorted(self)  # Sort the list
+        print(sorted_list)  # Print the sorted list
