@@ -10,7 +10,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-if __name__ == "__main__":
+"""if __name__ == "__main__":
     # Ejemplo de uso
     obj1 = Base()
     print(obj1.id)  # Salida: 1
@@ -22,6 +22,6 @@ if __name__ == "__main__":
     print(obj3.id) 
 
     obj4 = Base()
-    print(obj4.id)
+    print(obj4.id)"""
 
      
