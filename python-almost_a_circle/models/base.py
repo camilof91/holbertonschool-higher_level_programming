@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+""""Define a class Base"""
+
 
 class Base:
     __nb_objects = 0
 
     def __init__(self, id = None):
+        """
+        If the new object don't send a id 
+        will be assigned one
+        """
         if id != None:
             self.id = id
         else:
