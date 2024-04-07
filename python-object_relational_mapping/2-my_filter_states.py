@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Lists only states that start with the letter N
-from the database hbtn_0e_0_usa"""
+"""Lists only states from 4 argument"""
 
 
 import sys
@@ -17,11 +16,11 @@ if __name__ == "__main__":
     
     find=sys.argv[4]
     cursor = db.cursor()
-    sql = "SELECT * FROM states ORDER BY id"
+    sql = "SELECT * FROM states WHERE name LIKE '{find}%' ORDER BY id"
     cursor.execute(sql)
     results = cursor.fetchall()
     for row in results:
-        if row[1] == find:
+        # if row[1] == find:
             print(row)
     
     cursor.close()
