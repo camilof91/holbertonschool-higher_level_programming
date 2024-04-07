@@ -20,10 +20,7 @@ if __name__ == "__main__":
     sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
     cursor.execute(sql)
     results = cursor.fetchall()
-    if not results:
-        print("No states found starting with the letter N.")
-    else:
-        for row in results:
-            print(row)
+    for row in results:
+        print(row)
 
     db.close()
