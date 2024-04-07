@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa."""
+"""Lists only states that start with the letter N from the database hbtn_0e_0_usa"""
 # Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
 
 
@@ -16,10 +16,13 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    cursor.execute(sql)
     results = cursor.fetchall()
-
-    for row in results:
-        print(row)
+    if not results:
+        print("No states found starting with the letter N.")
+    else:
+        for row in results:
+            print(row)
 
     db.close()
