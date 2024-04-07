@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists only states that start with the letter N 
+"""Lists only states that start with the letter N
 from the database hbtn_0e_0_usa"""
 # Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
 
