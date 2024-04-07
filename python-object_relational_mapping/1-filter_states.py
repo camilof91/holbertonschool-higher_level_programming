@@ -17,10 +17,11 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    sql = "SELECT * FROM states WHERE name LIKE '[nN]%' ORDER BY id"
+    sql = "SELECT * FROM states ORDER BY id"
     cursor.execute(sql)
     results = cursor.fetchall()
     for row in results:
-        print(row)
+        if row[1][:1].upper() == "N":
+            print(row)
 
     db.close()
