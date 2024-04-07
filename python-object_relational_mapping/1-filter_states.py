@@ -21,7 +21,7 @@ if __name__ == "__main__":
     cursor.execute(sql)
     results = cursor.fetchall()
     for row in results:
-        if row[1][:1].upper() == "N":
+        if row[1][:1] == "N":
             print(row)
 
     db.close()
